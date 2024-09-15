@@ -1,1 +1,11 @@
-
+def algoritm(a):
+    i = str(bin(a))[2:]
+    i = i + str((i.count('1'))%2)
+    i = i + str((i.count('1'))%2)
+    number = 0
+    for j in range(len(i)):
+        number += int(i[j])*2**(len(i)-1-j)
+    return number
+for i in range(13, 50):
+    print(algoritm(i), i)
+#https://colab.research.google.com/drive/1GKeKGiqCzEcJToiVMPRyTXRNfi57PXRm?usp=sharing
