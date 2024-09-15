@@ -1,1 +1,19 @@
 
+def algoritm(a):
+    i = bin(a)[2:]
+    i += str((i.count('1'))%2)
+    i += str((i.count('1'))%2)
+    x = 0
+    for k in range(len(i), 0, -1):
+        x += int(i[len(i) - k])*2**(k-1)
+    return x
+a = int(input())
+print(algoritm(a))
+
+for i in range(1, 50):
+    if algoritm(i) > 93:
+        print(i)
+        break
+#По какой-то причине pycharm не работал, так что я работала в colab.
+#https://colab.research.google.com/drive/13mNqSvbpPUQ-XREf0On3EbDGAfegdftX?usp=sharing
+#https://colab.research.google.com/drive/1vQ-iO8f5RgPIcZChrX70XXFn04A6t7mI?usp=sharing
