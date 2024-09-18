@@ -1,0 +1,11 @@
+max_lenght = 0
+with open('24.2.txt') as f:
+    f = list(f)
+current_str = f[0][:3]
+for i in range(3, len(f[0])):
+    current_str += f[0][i]
+    if current_str[-4:] == 'XZZY':
+        if len(current_str)-1 > max_lenght:
+            max_lenght = len(current_str)-1
+        current_str = current_str[-3:]
+print(max_lenght)
