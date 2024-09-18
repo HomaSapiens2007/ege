@@ -1,0 +1,5 @@
+x = '1'*78
+while '111' in x:
+    x = x.replace('111', '2', 1)
+    x = x.replace('222', '1', 1)
+print(x)
