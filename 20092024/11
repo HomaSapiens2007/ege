@@ -1,0 +1,8 @@
+for i in range(69, 80):
+    x = '0' + '12'*i + '0'
+    while x.count('00') != 1:
+        x = x.replace('02', '101', 1)
+        x = x.replace('11', '2', 1)
+        x = x.replace('12', '21', 1)
+        x = x.replace('010', '00', 1)
+    print(x.count('2')*2 + x.count('1'), i)
