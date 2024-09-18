@@ -1,0 +1,16 @@
+x = 0
+with open('09.csv') as f:
+    for a in f:
+        six = list(map(int, a.split(',')))
+        not_alone, alone, id_a, id_n_a = 0, 0, 0, 0
+        for number in six:
+            if six.count(number) != 1:
+                not_alone += number
+                id_n_a +=1
+            else:
+                alone += number
+                id_a += 1
+        if id_a != 0 and id_n_a != 0:
+            if alone/id_a > not_alone/id_n_a:
+                x += 1
+print(x)
