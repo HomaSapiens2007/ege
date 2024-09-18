@@ -1,0 +1,11 @@
+max_lenght = 1
+with open('24.txt') as f:
+    f = list(f)
+current_str = f[0][0]
+for i in range(1, len(f[0])):
+    current_str += f[0][i]
+    if current_str[-2:] == 'AC' or current_str[-2:] == 'CA' or current_str[-2:] == 'BC'or current_str[-2:] == 'CB'or current_str[-2:] == 'AB'or current_str[-2:] == 'BA' and current_str[-2:] == 'AA' and current_str[-2:] == 'BB' and current_str[-2:] == 'CC':
+        if len(current_str)-1 > max_lenght:
+            max_lenght = len(current_str)-1
+        current_str = f[0][i]
+print(max_lenght)
