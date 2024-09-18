@@ -1,0 +1,7 @@
+x = 0
+with open('09.02.csv') as f:
+    for a in f:
+        six = list(map(int, a.split(',')))
+        if six.count(min(six)) == 1 and len(set(six)) < 6 and max(six) > 3*(sum(six)-max(six))/5:
+            x+=1
+print(x)
