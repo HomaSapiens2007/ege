@@ -1,0 +1,8 @@
+i = 0
+with open('09.csv') as f:
+    f = list(f)
+    for a in f:
+        six = list(map(int, a.split(',')))
+        if (six.count(max(six)) == 1) and (len(set(six))<6) and (max(six) > 3*(sum(six)-max(six))/5):
+            i+=1
+print(i)
