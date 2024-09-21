@@ -1,0 +1,9 @@
+for i in range(100, 999):
+    x = list(str(i))
+    one = int(x[0])
+    two = int(x[1])
+    three = int(x[2])
+    a = str(min(one+two, two+three)) + str(max(one+two, two+three))
+    if a == '714':
+        print(i)
+        break
