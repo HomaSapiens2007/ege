@@ -1,0 +1,26 @@
+def time(id, f):
+    if int(f[id][1][0]) == 0:
+        id__time = int(f[id][0])
+    else:
+        id__time = 0
+        for i in f[id][1]:
+            x = time(i,f)
+            if x > id__time:
+                id__time = x
+        id__time +=int(f[id][0])
+
+    return id__time
+f = open('22.csv').read().split('\n')[1:]
+a = {}
+times = []
+for i in range(len(f)):
+    f[i] = f[i].split((','))
+    f[i][2] = f[i][2].split(';')
+    a[f[i][0]] = f[i][1:]
+for j in range(len(f)-1):
+    times.append(time(f[j][0], a))
+watch = 0
+for time in times:
+    if time<=120:
+        watch += 1
+print(watch)
