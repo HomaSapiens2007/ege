@@ -1,0 +1,14 @@
+with open('inf_22_10_20_26.txt') as f:
+    f = list(map(int,f))
+N = f[0]
+f = f[1:]
+a = f[::]
+discover = []
+money = 0
+for i in range(N-1):
+    if f[i] <= 100:
+        a.remove(f[i])
+for i in range(len(a)//2):
+    discover.append(min(a))
+    a.remove(min(a))
+print(sum(a)*30/100, max(a))
