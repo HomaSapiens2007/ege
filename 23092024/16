@@ -1,0 +1,9 @@
+def F(n):
+    if n < 3:
+        return 1
+    elif n > 2:
+        x = 0
+        for i in range(n):
+            x += F(i)
+        return x
+print(F(18))
