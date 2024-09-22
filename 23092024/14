@@ -1,0 +1,21 @@
+a = '0123456789ABCDEFGHIJ'
+x = 0
+s = '98897021'
+s_l = len(s) - 1
+s_to_ten = 0
+t = '20923'
+t_l = len(t) - 1
+t_to_ten = 0
+while x <= s_l:
+    s_to_ten += a.index(s[-1])*19**x
+    s = s[:-1]
+    x += 1
+x = 0
+while x <= t_l:
+    t_to_ten += a.index(t[-1])*19**x
+    t = t[:-1]
+    x += 1
+for i in range(len(a)-1, 0, -1):
+    if (s_to_ten + t_to_ten + i*19**2 + i*19**3)%18 == 0:
+        print(i, (s_to_ten + t_to_ten + i*19**2 + i*19**3)/18)
+        break
