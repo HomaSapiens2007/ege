@@ -11,4 +11,4 @@ for i in range(N-1):
 for i in range(len(a)//2):
     discover.append(min(a))
     a.remove(min(a))
-print(sum(a)*30/100, max(a))
+print(sum(discover)*30/100 + sum(a), max(discover))
