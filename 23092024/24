@@ -1,0 +1,11 @@
+max_lenght = 1
+with open('24.txt') as f:
+    f = list(f)
+current_str = f[0][0]
+for i in range(1, len(f[0])):
+    current_str += f[0][i]
+    if current_str[-2:] == 'QR' or current_str[-2:] == 'RQ' or current_str[-2:] == 'RS'or current_str[-2:] == 'SR'or current_str[-2:] == 'SQ'or current_str[-2:] == 'QS' and current_str[-2:] == 'QQ' and current_str[-2:] == 'RR' and current_str[-2:] == 'SS':
+        if len(current_str)-1 > max_lenght:
+            max_lenght = len(current_str)-1
+        current_str = f[0][i]
+print(max_lenght)
