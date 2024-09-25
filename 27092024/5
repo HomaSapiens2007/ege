@@ -1,1 +1,15 @@
-
+for i in range(9999, 1000, -1):
+    a = []
+    x = list(str(i))
+    one = int(x[0])
+    two = int(x[1])
+    three = int(x[2])
+    fore = int(x[3])
+    a.append(one+two)
+    a.append(two+three)
+    a.append(three+fore)
+    a.remove(min(a))
+    b = str(min(a)) + str(max(a))
+    if b == '1315':
+        print(i)
+        break
