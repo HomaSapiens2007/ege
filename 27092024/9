@@ -1,0 +1,17 @@
+with open('9.csv') as f:
+    f = list(f)
+i = 0
+for a in f:
+    c = dict()
+    seven = list(map(int, a.split(',')))
+    sum_couple, sum_alone = 0, 0
+    for x in set(seven):
+        if seven.count(x) == 2:
+            c[x] = 2
+            sum_couple += c[x] *x
+        elif seven.count(x) == 1:
+            c[x] = 1
+            sum_alone += x
+    if len(c) == 5 and sum_couple/4 < sum_alone/3:
+        i += 1
+print(i)
