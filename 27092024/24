@@ -1,0 +1,7 @@
+f = open('24.txt').readline()
+d = f.split('D')
+max_lenght
+for i in d:
+    if i.count("D") <= 2:
+        max_lenght = max(len(i)+2, max_lenght)
+print(max_lenght)
