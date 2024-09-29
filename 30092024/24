@@ -1,0 +1,13 @@
+red = ['A', 'O']
+blue = ['C', 'D', 'F']
+with open('24.txt') as f:
+    f = list(f)[0]
+i = 0
+trio = 0
+while i < len(f)-2:
+    if blue.count(f[i]) == 1 and blue.count(f[i+1]) == 1 and blue.count(f[i+2]) == 1:
+        i += 3
+        trio += 1
+    else:
+        i += 1
+print(trio)
