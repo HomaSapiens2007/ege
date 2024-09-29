@@ -1,0 +1,15 @@
+with open('09 (1).csv') as f:
+    f = list(f)
+i = {}
+for a in f:
+    six = list(map(int, a.split(',')))
+    for one in six:
+        if six.count(one) == 1 and i.get(one) == None:
+            i[one] = 1
+        elif six.count(one) == 1 and i.get(one) != None:
+            i[one] += 1
+one_45 = 0
+for a in i:
+    if i[a] == 45:
+        one_45 += 1
+print(one_45)
