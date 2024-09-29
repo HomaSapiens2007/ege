@@ -1,0 +1,12 @@
+number = 1
+k = 0
+for i in range(2422000, 2422080):
+    for j in range(2, round(i**(1/2))+1):
+        if i%j == 0:
+            k += 1
+            break
+    if k == 0:
+        print(i, number)
+        number += 1
+    else:
+        k = 0
