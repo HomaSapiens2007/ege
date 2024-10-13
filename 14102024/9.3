@@ -1,0 +1,16 @@
+with open('9.3.csv') as f:
+    f = list(f)
+needs_strings = 0
+for a in f:
+    repeat = 0
+    six = list(map(int, a.split(',')))
+    even = []
+    odd = []
+    if len(set(six)) == 5:
+        for i in set(six):
+            if six.count(i) == 2:
+                repeat = i
+                break
+        if repeat < (sum(six)-repeat*2)/4:
+            needs_strings += 1
+print(needs_strings)
