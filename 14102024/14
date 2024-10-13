@@ -1,0 +1,7 @@
+a = 49**10 + 7**30 - 49
+a_to_7 = ''
+a_to_10 = ''
+while a>0:
+    a_to_7 = str(a%7) + a_to_7
+    a = a//7
+print(a_to_7.count('6'))
