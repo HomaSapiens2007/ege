@@ -1,0 +1,10 @@
+def calcul2(x, y, dot):
+    if x == y:
+        return 1
+    if x > y:
+        return 0
+    if dot == 0:
+        return calcul2(x+1, y, 0)+ calcul2(x+2, y, 0)+calcul2(x*2, y, 1)
+    elif dot == 1:
+        return calcul2(x+1, y, 0)+ calcul2(x+2, y, 0)
+print(calcul2(1, 11, 0))
