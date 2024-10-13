@@ -1,0 +1,10 @@
+with open('09.csv') as f:
+    f = list(f)
+needs_strings = 0
+for a in f:
+    four = list(map(int, a.split(',')))
+    even = []
+    odd = []
+    if len(set(four)) == 4 and (max(four) < (sum(four) - max(four))):
+        needs_strings += 1
+print(needs_strings)
