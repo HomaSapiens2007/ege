@@ -1,0 +1,12 @@
+def cal(n):
+    bin_n = bin(n)[2:-1]
+    modern_n = 0
+    if n%2 == 0:
+        bin_n += '01'
+    else:
+        bin_n += '10'
+    lenght = len(bin_n)
+    while bin_n != '':
+        modern_n += int(bin_n[-1])*2**(lenght - len(bin_n))
+        bin_n = bin_n[:-1]
+    return modern_n
