@@ -1,0 +1,14 @@
+with open('1_17.txt') as f:
+    f = list(map(int, f))
+min_13 = max(f)
+couple = 0
+max_couple = 0
+for x in f:
+    if x%13 == 0 and x < min_13:
+        min_13 = x
+for i in range(0, len(f)-1):
+    if not(((f[i]%min_13 != 0) and (f[i+1]%min_13 != 0))):
+        couple += 1
+        if f[i] + f[i+1] > max_couple:
+            max_couple = f[i] + f[i+1]
+print(couple, max_couple)
