@@ -1,0 +1,23 @@
+with open('demo_2025_9.csv') as f:
+    f = f.read().split('\n')
+    f.pop()
+book = []
+needs = 0
+for string in f:
+    s = list(map(int, string.split(',')))
+    book.append(s)
+for page in book:
+    id = 0
+    re = 0
+    not_re = 0
+    for letter in page:
+        if page.count(letter) > 1:
+            id += 1
+            if page.count(letter) == 3:
+                re += letter
+        else:
+            not_re += letter
+    if id == 3 and not_re**2 < re**2:
+        needs += 1
+    print()
+print(needs)
