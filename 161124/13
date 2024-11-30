@@ -1,0 +1,8 @@
+min_number = 11**15
+for x in range(8):
+    for y in range(8):
+        number = y*11**4 + 4*11**2 + 11*x + 5 + 2*8**4 + 5*8**3 + 3*8**2 + x*8 + y
+        if number%117 == 0:
+            if number < min_number:
+                min_number = number
+print(min_number/117)
