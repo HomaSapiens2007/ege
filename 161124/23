@@ -1,0 +1,7 @@
+def calcul(x, y):
+    if x == y: 
+        return 1
+    if x < y: 
+        return 0
+    return calcul(x - 2, y)+calcul(x // 3, y) + calcul(x//2, y)
+print(calcul(40,20)*calcul(20, 4))
