@@ -1,0 +1,19 @@
+with open('1_26.txt') as f:
+    f = f.read().split('\n')
+    a = f[0]
+    f.pop()
+    f = list(map(int, f[1:]))
+    f = list(set(f))
+    f.sort()
+height = 1
+current_cake = f[len(f)-1]
+present_cake = current_cake
+last_cake = present_cake
+while present_cake >= f[0]:
+    if present_cake in f:
+        height += 1
+        last_cake = present_cake
+        present_cake -= 4
+    else:
+        present_cake -= 1
+print(height, last_cake)
