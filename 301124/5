@@ -1,0 +1,10 @@
+book = [0]*10000
+max_page = 0
+for i in range(1000):
+    bin_n = bin(i)[2:] + bin(i%4)[2:]
+    a = int(bin_n, 2)
+    book[a] = 1
+for i in range(9934):
+    if sum(book[i:i+65]) > max_page:
+        max_page = sum(book[i:i+65])
+print(max_page)
