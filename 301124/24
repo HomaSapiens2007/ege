@@ -1,0 +1,17 @@
+with open('1_24 (1).txt') as f:
+    f = f.read()
+number = set(['2', '1', '4'])
+letter = set(['Q', 'R', 'W'])
+current_lenght = 0
+max_lenght = 0
+last_i = '2'
+for i in f[1:]:
+    if (i in number and last_i in letter) or (i in letter and last_i in number):
+        current_lenght += 1
+        last_i = i
+    else:
+        if current_lenght > max_lenght:
+            max_lenght = current_lenght
+        current_lenght = 1
+        last_i = i
+print(max_lenght)
