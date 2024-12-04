@@ -1,0 +1,14 @@
+with open('69927.txt') as f:
+    f = f.read().split('\n')
+    f.pop()
+book = list(map(int, f))
+num = 0
+needs = 0
+max_pair = 0
+num_32 = [1 if i%32 == 0 else 0 for i in book].count(1)
+for page in range(len(book)-1):
+    if (book[page] < 0 or book[page+1] < 0) and (book[page]+book[page+1]<num_32):
+        needs += 1
+        if max_pair < book[page]+book[page+1]:
+            max_pair = book[page]+book[page+1]
+print(needs, max_pair)
