@@ -1,0 +1,17 @@
+with open('69915.csv') as f:
+    f = f.read().split('\n')
+    f.pop()
+needs = 0
+for i in range(len(f)):
+    six = list(map(int, f[i].split(',')))
+    number = 0
+    sum_re = 0
+    sum_irre = 0
+    for one in six:
+        if six.count(one) == 3:
+            number += 1
+            sum_re += one
+        else:
+            sum_irre += one
+    if number == 3 and sum_re**2 > sum_irre**2:
+        needs += 1
