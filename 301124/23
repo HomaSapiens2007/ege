@@ -1,0 +1,8 @@
+def calcul(n, m):
+    if n < m:
+        return 0
+    elif n == m:
+        return 1
+    else:
+        return calcul(n-1, m) + calcul(n//3, m)
+print(calcul(67, 33)+calcul(33,5))
