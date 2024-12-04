@@ -1,0 +1,11 @@
+a = '01234567'
+min_n = 10**9
+needs = 0
+for x in a[1:]:
+    for y in a:
+        number = int(x+'01'+y+'4', 9) + int(x+y+'544', 8)
+        if number%89 == 0:
+            needs += 1
+            if number < min_n:
+                min_n = number
+print(min_n/89)
