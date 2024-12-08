@@ -1,0 +1,10 @@
+with open("1_9.csv") as f:
+    f = f.read().split('\n')
+    f.pop()
+needs = 0
+for i in f:
+    four = list(map(int, i.split(',')))
+   # print(four)
+    if (max(four) < sum(four)-max(four)) and (max(four)+min(four) == sum(four)-max(four)-min(four)):
+        needs += 1 
+print(needs)
