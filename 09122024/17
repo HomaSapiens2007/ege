@@ -1,0 +1,15 @@
+with open('17 (3).txt') as f:
+    f = f.read().split('\n')
+    f.pop()
+    f = list(map(int, f))
+a = max([i if i%100 == 17 else 0 for i in f])
+needs = 0
+max_trio = 0
+for i in range(len(f)-2):
+    if ((10000>f[i]>999) + (10000>f[i+1]>999) + (10000>f[i+2]>999)) == 2:
+        if (f[i]%5 == 0) + (f[i+1]%5 == 0) + (f[i+2]%5 == 0) > 0:
+            if f[i] + f[i+1] + f[i+2] > a:
+                needs+=1
+                if f[i] + f[i+1] + f[i+2] > max_trio:
+                    max_trio = f[i] + f[i+1] + f[i+2]
+print(needs, max_trio)
