@@ -1,0 +1,24 @@
+with open('26 (2).txt') as f:
+    f = f.read().split('\n')
+    a = int(f[0])
+    f = f[1:]
+    f.pop()
+processes = []
+for process in f:
+    processes.append(list(map(int, process.split())))
+processes.sort()
+start = [i[0] for i in processes]
+end = [i[1] for i in processes]
+programs = 0
+maybe_start = 0
+previous = 0
+while max(start) > maybe_start:
+    while start[0] < maybe_start:
+        start.remove(start[0])
+        end.remove(end[0])
+    previous = agree_end
+    agree_end = min(end)
+    agree_start = start[end.index(agree_end)]
+    programs += 1
+    maybe_start = agree_end + 20
+print(programs, max(start) - previous)
