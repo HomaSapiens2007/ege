@@ -1,0 +1,13 @@
+from itertools import *
+odd = '1357'
+even = '2468'
+count = 0
+for number in product(even,odd,even,odd,even,odd,even,odd,even,odd,even):
+    flag = 1
+    for i in range(10):
+        if number.count (str(i)) > 4:
+            flag = 0
+            break
+    if flag == 1:
+        count += 1        
+print(count * 2)
