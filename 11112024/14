@@ -1,0 +1,12 @@
+#88x4y9 + 7x44y11
+a = '12345678'
+min_pair = 10**8
+for x in a:
+    for y in a:
+        one = int('88' + x + '4' + y, 9)
+        two = int('7' + x + '44' + y, 11)
+        if (one+two)%61 == 0:
+            count += 1
+            if (one+two) < min_pair:
+                min_pair = one+two
+print(min_pair/61)
