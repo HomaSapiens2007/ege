@@ -1,0 +1,8 @@
+from itertools import *
+first = '123'
+last = '0123'
+count = 0
+for i in product(first, last,last):
+    if int(i[0])+int(i[2]) > int(i[1]):
+        count += 1
+print(count)
