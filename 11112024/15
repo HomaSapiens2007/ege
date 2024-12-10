@@ -1,0 +1,8 @@
+for A in range(900):
+    count = 0
+    for x in range(300):
+        if ((x&25) != 0) <= (((x&17) == 0) <= (x&A != 0)):
+            count += 1
+    if count == 300:
+        print(A)
+        break
