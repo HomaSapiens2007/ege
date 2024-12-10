@@ -1,0 +1,14 @@
+def knee(n):
+    sons_in_knee = []
+    for i in range(2, int(n**(1/2))):
+        if n%i == 0:
+            sons_in_knee.append(i)
+    return sons_in_knee
+answer = []
+for a in range(700000, 800000):
+    sons = knee(a)
+    if len(sons)>0:
+        M = min(sons) + a//min(sons)
+        if M%10 == 4:
+            answer.append([a, M])
+print(answer[:5])
