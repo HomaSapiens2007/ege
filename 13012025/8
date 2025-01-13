@@ -1,0 +1,8 @@
+import itertools
+first = '123456789AAAAA'
+last = '0123456789AAAAA'
+needs = 0
+for i in product(first, last, last, last,last, last, last, last):
+    if i.count('0') == 2 and i.count('A') <= 4:
+        needs +=1 
+print(needs)
