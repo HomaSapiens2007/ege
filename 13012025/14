@@ -1,0 +1,8 @@
+min_pair = 14**8
+for x in range(1, 12):
+    for y in range(1, 12):
+        one = y*12**3 + 10*12**2 + 120 + x
+        two = x*14**3 + 28 + y
+        if (one+two)%80 == 0 and (one+two)<min_pair:
+            min_pair = one+two
+print(min_pair/80)
