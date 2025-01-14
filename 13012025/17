@@ -1,0 +1,28 @@
+def three(n):
+    if n > 0:
+        if n%10 == 3:
+            return 1
+        else:
+            return 0
+    else:
+        if n%10 == 7:
+            return 1
+        else:
+            return 0
+with open("17 (4).txt") as f:
+    f = f.read().split('\n')
+    f.pop()
+    f = list(map(int, f))
+max_3 = 0
+max_pair = 0
+needs = 0
+for num in f:
+    if num > 0 and num%10 == 3 and num > max_3:
+        max_3 = 0
+for first in range(len(f)-1):
+    if three(f[first]) + three(f[first+1]) == 1:
+        if f[first]**2 + f[first+1]**2 >= max_3**2:
+            needs += 1
+            if f[first] + f[first+1] > max_pair:
+                max_pair = f[first] + f[first+1]
+print(needs, max_pair)
