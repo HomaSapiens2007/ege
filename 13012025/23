@@ -1,0 +1,8 @@
+def calcul(x, y):
+    if x > y:
+        return 0
+    elif x == y:
+        return 1
+    else:
+        return calcul(x+1, y) + calcul(x*2, y)
+print(calcul(2,11)*calcul(22,24) + calcul(2, 6)*calcul(12, 24))
