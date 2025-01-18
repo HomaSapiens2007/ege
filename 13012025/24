@@ -1,0 +1,16 @@
+def max_dist(string):
+    max_len = 0
+    for i in string:
+        if string.rfind(i) - string.find(i) > max_len:
+            max_len = string.rfind(i) - string.find(i)
+    return max_len
+with open("24.txt") as f:
+    f = f.readlines()
+    for i in f:
+        if i.count('A') < 25:
+            f.remove(i)
+maximum = 0
+for j in f:
+    if max_dist(j) > maximum:
+        maximum = max_dist(j)
+print(maximum)
