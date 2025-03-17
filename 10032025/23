@@ -1,0 +1,27 @@
+with open('26 (3).txt') as f:
+    f = [list(map(int, i.split())) for i in f.read().split('\n')[1:-1]]
+f.sort()
+queue1 = [0]*13
+queue2 = [0]*13
+sad = 0
+two = 0
+one = 0
+for person in f:
+    queue1 = [0 if i<=(person[0]+person[1]) else i for i in queue1]
+    queue2 = [0 if i<=(person[0]+person[1]) else i for i in queue2]
+    if person[2]==1 and 0 in queue1:
+        queue1[queue1.index(0)] = person[0]+person[1]
+        one+=1
+    elif person[2]==2 and 0 in queue2:
+        queue2[queue2.index(0)] = person[0]+person[1]
+        two += 1
+    elif person[2]==0 and queue1.count(0)>=queue2.count(0) and 0 in queue1:
+        queue1[queue1.index(0)] = person[0]+person[1]
+        one+=1
+    elif 0 in queue2:
+        queue2[queue2.index(0)] = person[0]+person[1]
+        two += 1
+    else:
+        sad+=1
+print(one, two, sad, len(f))
+print(queue1, queue2)
