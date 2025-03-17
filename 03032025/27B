@@ -1,0 +1,36 @@
+def dist(star1, star2):
+    return ((star1[0]-star2[0])**2 + (star1[1] - star2[1])**2)**0.5
+def centroid(stars):
+    min_dist = 10**20
+    for star in stars:
+        all_dist = sum([dist(i, star) for i in stars])
+        if all_dist < min_dist:
+            min_dist = all_dist
+            min_star = star
+    return min_star
+with open('27B.csv') as f:
+    f = f.read().split('\n')
+claster1 = []
+claster2 = []
+claster3 = []
+claster4 = []
+claster5 = []
+for coordinates in f[1:-1]:
+    star = list(map(float, [coordinates.split('","')[0][1:].replace(',', '.'), coordinates.split('","')[1][:-1].replace(',', '.')]))
+    if star[1]<2 and star[0]<2:
+        claster1.append(star)
+    elif star[1]<1:
+        claster2.append(star)
+    elif star[0]<3:
+        claster3.append(star)
+    elif star[1]<5:
+        claster4.append(star)
+    else:
+        claster5.append(star)
+print(len(claster1), len(claster2), len(claster3), len(claster4), len(claster5))
+centroid1 = centroid(claster1)
+centroid2 = centroid(claster2)
+centroid3 = centroid(claster3)
+centroid4 = centroid(claster4)
+centroid5 = centroid(claster5)
+print((centroid1[0]+centroid3[0]+centroid4[0]+centroid5[0])/4*10000, (centroid1[1]+centroid3[1]+centroid4[1]+centroid5[1])/4*10000)
