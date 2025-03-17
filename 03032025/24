@@ -1,0 +1,10 @@
+with open('24.txt') as f:
+    f = f.read()
+itog = []
+for i in range(len(f)-2):
+    trio = f[i:i+3]
+    if trio[0] == trio[2]:
+        itog.append(trio[1])
+alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+alphabet_2 = [itog.count(i) for i in alphabet]
+print(alphabet[alphabet_2.index(max(alphabet_2))])
