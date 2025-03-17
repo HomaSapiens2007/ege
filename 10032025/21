@@ -1,0 +1,7 @@
+with open('24 (1).txt') as f:
+    f = f.read().split('F')
+max_len = 0
+for i in f:
+    if i.count('A')<=2:
+        max_len = max(max_len, len(i))
+print(max_len)
