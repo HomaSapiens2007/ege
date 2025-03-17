@@ -1,0 +1,14 @@
+with open("9 (1).csv") as f:
+    f = [list(map(int, i.split(','))) for i in f.read().split('\n')[:-1]]
+needs = 0
+for six in f:
+    odd = []
+    even = []
+    for one in six:
+        if six.count(one) == 1:
+            odd.append(one)
+        else:
+            even.append(one)
+    if len(even) == 2 and sum(odd)/4<=sum(even):
+        needs += 1
+print(needs)
