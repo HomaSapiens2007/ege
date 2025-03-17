@@ -1,0 +1,19 @@
+with open('26.txt') as f:
+    f = f.read().split('\n')[1:-1]
+    f = [list(map(int, i.split())) for i in f]
+table = [[sum(i[1:]), sum([j if j>0 else 0 for j in i[1:]]), len(i)-i.count(0)-1, i[0]] for i in f]
+table.sort()
+table = table[::-1]
+table = table[:7145]
+quater = (7144)//4
+next_tur = table[:last_lucky]
+print(table[quater])
+lucky = [1 if i[:-1]==table[quater-1][:-1] else 0 for i in table[quater:]]
+last_lucky = quater + sum(lucky)
+print(last_lucky)
+ostatok = table[last_lucky:]
+lucky_ostatok = int(len(ostatok)/10)
+lucky2 = [1 if i[:-1]==ostatok[lucky_ostatok-1][:-1] else 0 for i in ostatok[lucky_ostatok:]]
+print(ostatok[lucky_ostatok-1+sum(lucky2)])
+print(lucky_ostatok-1+sum(lucky2))
+print(table[len(next_tur)])
