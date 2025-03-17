@@ -1,0 +1,8 @@
+from itertools import product
+a = 'АНДРЕЙ'
+cnt = 0
+for i in product(a, repeat=6):
+    word = ''.join(i)
+    if word.count('А')>=1 and word.count('Й')<=1:
+        cnt+=1
+print(cnt)
