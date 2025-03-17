@@ -1,0 +1,6 @@
+a = 36**7 + 6**19 - 18
+b = ''
+while a > 0:
+    b = str(a%6) + b
+    a = a//6
+print(b.count('0'))
