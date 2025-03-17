@@ -1,0 +1,20 @@
+with open("09 (1).csv") as f:
+    f = f.read().split('\n')[:-1]
+needs = 0
+for six in f:
+    six = list(map(int, six.split(',')))
+    flag = 0
+    c_o, c_e = 0, 0
+    odd, even = 0, 0
+    for one in six:
+        if six.count(one) == 1:
+            odd += one
+            c_o += 1
+        else:
+            even += one
+            c_e += 1
+            if six.count(one)>=3:
+                flag = 1
+    if flag == 1 and odd != 0 and (odd/c_o < (sum(six)-odd)/(6 - c_o)):
+        needs += 1
+print(needs)
