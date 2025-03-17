@@ -1,0 +1,11 @@
+#(3x + 4y ≠ 60) ∨ ((A ≥ x) ∧ (A ≥ y))
+for A in range(300):
+    flag = 1
+    for x in range(300):
+        for y in range(300):
+            f = (3*x+4*y != 60) or ((A>=x) and (A>= y))
+            if not f:
+                flag = 0
+    if flag == 1:
+        print(A)
+        break
