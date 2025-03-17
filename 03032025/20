@@ -1,0 +1,15 @@
+def play(S, n):
+    if S<=17: return n%2 == 0
+    if S>17 and n<0: return 0
+    else:
+        h = [S-5]
+        if S%2 == 0:
+            h.append(S//2)
+        if S%3 == 0:
+            h.append(S//3)
+        if S%3 != 0 and S%2 != 0:
+            h.append(S+1)
+        x = [play(S, n-1) for S in h]
+        return any(x) if n%2 == 1 else all(x)
+print([[S, play(S, 1)] for S in range(18, 60)])
+print([[S, play(S, 3)] for S in range(18, 60)])
