@@ -1,0 +1,11 @@
+with open('17 (8).txt') as f:
+    f = list(map(int, f.read().split('\n')[:-1]))
+    max_pair, needs = 0, 0
+for i in range(len(f)-1):
+    for j in range(i+1, len(f)):
+        one = f[i]
+        two = f[j]
+        if (one - two)%2 == 0 and (one%31 == 0 or two%31 == 0):
+            needs += 1
+            max_pair = max(max_pair, one+two)
+print(needs, max_pair)
