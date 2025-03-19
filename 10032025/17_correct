@@ -1,0 +1,13 @@
+with open('17 (10).txt') as f:
+    f = list(map(int, f.read().split('\n')[:-1]))
+max_321 = max([i if i%1000==321 else 0 for i in f])
+max_sum = 0
+needs = 0
+for i in range(len(f)-2):
+    trio = [f[i], f[i+1], f[i+2]]
+    trio5 = [1 if 9999<j<10**6 else 0 for j in trio]
+    trio52 = [1 if j%5==0 else 0 for j in trio]
+    if sum(trio5) == 2 and sum(trio52)>=1 and sum(trio)>max_321:
+        needs+=1
+        max_sum = max(max_sum, sum(trio))
+print(needs, max_sum)
