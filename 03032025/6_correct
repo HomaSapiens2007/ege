@@ -1,0 +1,22 @@
+from turtle import *
+rt(180)
+size=10
+screensize(2000,2000)
+tracer(0)
+down()
+fd(5*size)
+rt(90)
+fd(50*size)
+rt(90)
+fd(5*size)
+for i in range(5):
+    circle(-5*size, 180)
+    seth(0)
+up()
+for x in range(-100,100):
+    for y in range(-100,100):
+        setpos(x*size,y*size)
+        dot(4,'red')
+done()
+#Направо 180 Вперёд 5 Направо 90 Вперёд 50 Направо 90 Вперёд 5 Повтори 5 [Дуга 5, 5, 0, 180]
+#75*5 +4*4 = 391
