@@ -1,0 +1,28 @@
+with open('26 (4).txt') as f:
+    f = [list(map(int, i.split())) for i in f.read().split('\n')[1:-1]]
+f.sort()
+queue1 = [0]*14
+queue2 = [0]*14
+two = 0
+one = 0
+for klient in f:
+    time = klient[0]
+    queue1 = [i if i>time else 0 for i in queue1]
+    queue2 = [i if i>time else 0 for i in queue2]
+    if klient[2]==1:
+        if 0 in queue1:
+            queue1[queue1.index(0)] = max(queue1)+klient[1]
+            one += 1
+    elif klient[2]==2:
+        if 0 in queue2:
+            queue2[queue2.index(0)] = max(queue2)+klient[1]
+            two += 1
+    else:
+        if 0 in queue1 and queue1.count(0)>=queue2.count(0):
+            queue1[queue1.index(0)] = max(queue1)+klient[1]
+            one+=1
+        elif 0 in queue2:
+            queue2[queue2.index(0)] = max(queue2)+klient[1]
+            two += 1
+print(two, len(f)-one-two)
+#Программа выдает ответ 131 464, а должна 125 469, т.е. у меня пять человек, которые должны уходить обслуживаются во втором окне, но я не понимаю, где в программме ошибка
